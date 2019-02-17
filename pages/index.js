@@ -1,6 +1,7 @@
 const ipc = require('electron').ipcRenderer
 const remote = require('electron').remote
 const gamepad = require('jsgamepad').gamepad
+const mousetrap = require('mousetrap')
 const {	execFile } = require('child_process')
 
 const settings = require('../settings')
@@ -22,7 +23,7 @@ function radialMenu_GoUp () {
 	updateRadialMenu()
 }
 
-function radialMeu_GoDown () {
+function radialMenu_GoDown () {
 	if (curActionIndex === radialMenu.length - 1) {
 		curActionIndex = 0
 	}
@@ -73,6 +74,10 @@ function quit () {
 	remote.getCurrentWindow().close()
 }
 
+
+mousetrap.bind('up', function() { radialMenu_GoUp() })
+mousetrap.bind('down', function() { radialMenu_GoDown() })
+mousetrap.bind('enter', function() { runActiveSelection() })
 gamepad.on("connected", (gamepad) => {
 	console.log("connected " + gamepad.id);
 }).on("disconnected", (gamepad) => {
@@ -82,7 +87,7 @@ gamepad.on("connected", (gamepad) => {
 }).on("buttonReleased", ({ button, buttonIndex, gamepad }) => {
   	console.log("released " + buttonIndex);
   	if (buttonIndex === 12) { radialMenu_GoUp() }
-  	else if (buttonIndex === 13) { radialMeu_GoDown() }
+  	else if (buttonIndex === 13) { radialMenu_GoDown() }
   	else if (buttonIndex === 0) { runActiveSelection() }
 });
  

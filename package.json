@@ -11,10 +11,10 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^4.0.5",
-    "jsgamepad": "^0.1.0",
+    "jsgamepad": "^0.1.0"
   },
   "dependencies": {
     "bulma": "^0.7.4",
-    "jquery": "^3.3.1",
+    "jquery": "^3.3.1"
   }
 }

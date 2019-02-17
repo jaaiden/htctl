@@ -6,13 +6,13 @@
 		{
 			"name": "chrome",
 			"type": "app",
-			"path": "/Application/Google Chrome.app",
+			"path": "/Application/Google\ Chrome.app",
 			"args": ""
 		},
 		{
 			"name": "plex",
 			"type": "app",
-			"path": "/Application/Plex Media Player.app",
+			"path": "/Application/Plex\ Media\ Player.app",
 			"args": ""
 		},
 		{

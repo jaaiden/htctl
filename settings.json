@@ -1,0 +1,37 @@
+{
+	"width": 1280,
+	"height": 800,
+	"isFullscreen": false,
+	"shortcuts": [
+		{
+			"name": "chrome",
+			"type": "app",
+			"path": "/Application/Google Chrome.app",
+			"args": ""
+		},
+		{
+			"name": "plex",
+			"type": "app",
+			"path": "/Application/Plex Media Player.app",
+			"args": ""
+		},
+		{
+			"name": "steam",
+			"type": "app",
+			"path": "/Application/Steam.app",
+			"args": ""
+		},
+		{
+			"name": "spotify",
+			"type": "app",
+			"path": "/Application/Spotify.app",
+			"args": ""
+		},
+		{
+			"name": "quit",
+			"type": "quitcmd",
+			"path": "",
+			"args": ""
+		}
+	]
+}

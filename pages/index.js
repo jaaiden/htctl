@@ -3,6 +3,7 @@ const remote = require('electron').remote
 const gamepad = require('jsgamepad').gamepad
 const mousetrap = require('mousetrap')
 const {	exec } = require('child_process')
+const opn = require('opn')
 
 const settings = require('../settings')
 // import gamepad from "jsgamepad"
@@ -54,6 +55,9 @@ function runActiveSelection () {
 	if (entry.type === "app") {
 		runApp(entry)
 	}
+	else if (entry.type === "site") {
+		openSite(entry)
+	}
 	else if (entry.type === "quitcmd")
 	{ quit() }
 }
@@ -77,6 +81,10 @@ function runApp (app) {
 	  		console.log(stdout)
 		})
 	}
+}
+
+function openSite (site) {
+	opn(site.path)
 }
 
 function quit () {

@@ -12,6 +12,13 @@
 			"args": ""
 		},
 		{
+			"name": "xfinity stream",
+			"type": "site",
+			"icon": "fas fa-stream fa-fw",
+			"path": "https://tv.xfinity.com",
+			"args": ""
+		},
+		{
 			"name": "plex",
 			"type": "app",
 			"icon": "fas fa-play fa-fw",
@@ -23,6 +30,13 @@
 			"type": "app",
 			"icon": "fab fa-steam fa-fw",
 			"path": "/Applications/Steam.app/Contents/MacOS/steam.sh",
+			"args": ""
+		},
+		{
+			"name": "minecraft",
+			"type": "app",
+			"icon": "fas fa-cube fa-fw",
+			"path": "/Applications/Minecraft.app/Contents/MacOS/launcher",
 			"args": ""
 		},
 		{

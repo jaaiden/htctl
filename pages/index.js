@@ -2,7 +2,7 @@ const ipc = require('electron').ipcRenderer
 const remote = require('electron').remote
 const gamepad = require('jsgamepad').gamepad
 const mousetrap = require('mousetrap')
-const {	execFile } = require('child_process')
+const {	exec } = require('child_process')
 
 const settings = require('../settings')
 // import gamepad from "jsgamepad"
@@ -33,11 +33,20 @@ function radialMenu_GoDown () {
 	updateRadialMenu()
 }
 
+function getAppNameAndIcon (app) {
+	var appIcon = app.icon
+	if (appIcon === undefined || appIcon === "") { appIcon = "fas fa-external-link-alt fa-fw" }
+	return '<span class="icon"><i class="' + appIcon + '"></i></span><span>&nbsp;&nbsp;' + app.name + '</span>'
+}
+
 function updateRadialMenu () {
-	console.log("active item: " + curActionIndex)
-	rmCurAction.innerHTML = radialMenu[curActionIndex].name
-	rmDnAction.innerHTML = (curActionIndex == radialMenu.length - 1) ? radialMenu[0].name : radialMenu[curActionIndex + 1].name
-	rmUpAction.innerHTML = (curActionIndex == 0) ? radialMenu[radialMenu.length - 1].name : radialMenu[curActionIndex - 1].name
+	var curApp = radialMenu[curActionIndex]
+	var dnApp = (curActionIndex == radialMenu.length - 1) ? radialMenu[0] : radialMenu[curActionIndex + 1]
+	var upApp = (curActionIndex == 0) ? radialMenu[radialMenu.length - 1] : radialMenu[curActionIndex - 1]
+
+	rmCurAction.innerHTML = getAppNameAndIcon(curApp)
+	rmDnAction.innerHTML = getAppNameAndIcon(dnApp)
+	rmUpAction.innerHTML = getAppNameAndIcon(upApp)
 }
 
 function runActiveSelection () {
@@ -52,7 +61,7 @@ function runActiveSelection () {
 function runApp (app) {
 	if (app.args === "")
 	{
-		execFile(app.path, (error, stdout, stderr) => {
+		exec(app.path, (error, stdout, stderr) => {
 			if (error) {
 	    		throw error
 	  		}
@@ -61,7 +70,7 @@ function runApp (app) {
 	}
 	else
 	{
-		execFile(app.path, app.args.split(' '), (error, stdout, stderr) => {
+		exec(app.path, app.args.split(' '), (error, stdout, stderr) => {
 			if (error) {
 	    		throw error
 	  		}
@@ -74,18 +83,18 @@ function quit () {
 	remote.getCurrentWindow().close()
 }
 
-
+// keyboard binds
 mousetrap.bind('up', function() { radialMenu_GoUp() })
 mousetrap.bind('down', function() { radialMenu_GoDown() })
 mousetrap.bind('enter', function() { runActiveSelection() })
+
+// gamepad binds
 gamepad.on("connected", (gamepad) => {
 	console.log("connected " + gamepad.id);
 }).on("disconnected", (gamepad) => {
   	console.log("disconnected " + gamepad.index);
 }).on("buttonPressed", ({ button, buttonIndex, gamepad }) => {
-  	console.log("pressed " + buttonIndex);
 }).on("buttonReleased", ({ button, buttonIndex, gamepad }) => {
-  	console.log("released " + buttonIndex);
   	if (buttonIndex === 12) { radialMenu_GoUp() }
   	else if (buttonIndex === 13) { radialMenu_GoDown() }
   	else if (buttonIndex === 0) { runActiveSelection() }

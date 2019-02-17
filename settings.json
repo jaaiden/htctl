@@ -6,30 +6,35 @@
 		{
 			"name": "chrome",
 			"type": "app",
-			"path": "/Application/Google\\ Chrome.app",
+			"icon": "fab fa-chrome fa-fw",
+			"path": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
 			"args": ""
 		},
 		{
 			"name": "plex",
 			"type": "app",
-			"path": "/Application/Plex\\ Media\\ Player.app",
+			"icon": "fas fa-play fa-fw",
+			"path": "/Applications/Plex\\ Media\\ Player.app/Contents/MacOS/Plex\\ Media\\ Player",
 			"args": ""
 		},
 		{
 			"name": "steam",
 			"type": "app",
-			"path": "/Application/Steam.app",
+			"icon": "fab fa-steam fa-fw",
+			"path": "/Applications/Steam.app/Contents/MacOS/steam.sh",
 			"args": ""
 		},
 		{
 			"name": "spotify",
 			"type": "app",
-			"path": "/Application/Spotify.app",
+			"icon": "fab fa-spotify fa-fw",
+			"path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
 			"args": ""
 		},
 		{
 			"name": "quit",
 			"type": "quitcmd",
+			"icon": "fas fa-times fa-fw",
 			"path": "",
 			"args": ""
 		}

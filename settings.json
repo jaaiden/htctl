@@ -2,6 +2,7 @@
 	"width": 1280,
 	"height": 800,
 	"isFullscreen": false,
+	"dev": false,
 	"shortcuts": [
 		{
 			"name": "chrome",

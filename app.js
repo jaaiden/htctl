@@ -5,7 +5,7 @@ let win
 function createWindow () {
     win = new BrowserWindow({ width: settings.width, height: settings.height, frame: false, titleBarStyle: 'hidden', fullscreen: settings.isFullscreen })
     win.loadFile('pages/index.html')
-    win.webContents.openDevTools()
+    if (settings.dev) { win.webContents.openDevTools() }
     win.on('closed', () => {
         win = null
     })

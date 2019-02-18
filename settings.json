@@ -5,45 +5,31 @@
 	"dev": false,
 	"shortcuts": [
 		{
-			"name": "chrome",
+			"name": "firefox",
 			"type": "app",
-			"icon": "fab fa-chrome fa-fw",
-			"path": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
-			"args": ""
-		},
-		{
-			"name": "xfinity stream",
-			"type": "site",
-			"icon": "fas fa-stream fa-fw",
-			"path": "https://tv.xfinity.com",
-			"args": ""
-		},
-		{
-			"name": "plex",
-			"type": "app",
-			"icon": "fas fa-play fa-fw",
-			"path": "/Applications/Plex\\ Media\\ Player.app/Contents/MacOS/Plex\\ Media\\ Player",
+			"icon": "fab fa-firefox fa-fw",
+			"path": "\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\"",
 			"args": ""
 		},
 		{
 			"name": "steam",
 			"type": "app",
 			"icon": "fab fa-steam fa-fw",
-			"path": "/Applications/Steam.app/Contents/MacOS/steam.sh",
+			"path": "\"C:\\Program Files (x86)\\Steam\\Steam.exe\"",
 			"args": ""
 		},
 		{
-			"name": "minecraft",
-			"type": "app",
-			"icon": "fas fa-cube fa-fw",
-			"path": "/Applications/Minecraft.app/Contents/MacOS/launcher",
+			"name": "steam big picture mode",
+			"type": "site",
+			"icon": "fab fa-steam fa-fw",
+			"path": "steam://open/bigpicture",
 			"args": ""
 		},
 		{
 			"name": "spotify",
 			"type": "app",
 			"icon": "fab fa-spotify fa-fw",
-			"path": "/Applications/Spotify.app/Contents/MacOS/Spotify",
+			"path": "C:\\Users\\zack\\AppData\\Roaming\\Spotify\\Spotify.exe",
 			"args": ""
 		},
 		{
